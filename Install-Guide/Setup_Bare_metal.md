@@ -5,7 +5,7 @@ To set up Gluster on physical servers, I recommend two servers of very
 modest specifications (2 CPU’s, 2GB of RAM, 1GBE). Since we are dealing
 with physical hardware here, keep in mind, what we are showing here is
 for testing purposes. In the end, remember that forces beyond your
-control (aka, your bosses’ boss...) can force you to take that the “just
+control (aka, your bosses’ boss...) can force you to take that “just
 for a quick test” envinronment right into production, despite your
 kicking and screaming against it. To prevent this, it can be a good idea
 to deploy your test environment as much as possible the same way you
@@ -18,11 +18,11 @@ practices we mentioned before:
     InfiniBand are great if you have access to them, but even a 1GBE
     backbone can help you get the most out of you deployment. Make sure
     that the interfaces you are going to use are also in DNS since we
-    will be using the hostnames when we deploy Gluster
+    will be using the hostnames when we deploy Gluster.
 -   When it comes to disks, the more the merrier. Although you could
     technically fake things out with a single disk, there would be
     performance issues as soon as you tried to do any real work on the
-    servers
+    servers.
 
 With the explosion of commodity hardware, you don’t need to be a
 hardware expert these days to deploy a server. Although this is
@@ -34,7 +34,7 @@ them:
 -   Most manufacturers enable power saving mode by default. This is a
     great idea for servers that do not have high performance
     requirements. For the average storage server, the performance impact
-    of the power savings is not a reasonable trade off
+    of the power savings is not a reasonable trade off.
 -   Newer motherboards and processors have lots of nifty features!
     Enhancements in virtualization, newer ways of doing predictive
     algorithms and NUMA are just a few to mention. To be safe, many
@@ -57,7 +57,7 @@ the happy balance between time spent managing the hardware (which
 ideally should be as close to zero after you setup initially) and the
 expected gains you get back from it.
 
-Finally, remember that some hardware really is better that others.
+Finally, remember that some hardware really is better than others.
 Without pointing fingers anywhere specifically, it is often true that
 onboard components are not as robust as add-ons. As a general rule, you
 can safely delegate the on-board hardware to things like management
