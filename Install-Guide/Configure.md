@@ -1,6 +1,6 @@
 ### Configure Firewall
 
-For the Gluster to communicate within a cluster either the firewalls
+For the Gluster to communicate within a cluster, either the firewalls
 have to be turned off or enable communication for each server.
 
 		iptables -I INPUT -p all -s `<ip-address>` -j ACCEPT
@@ -9,14 +9,14 @@ have to be turned off or enable communication for each server.
 
 Remember that the trusted pool is the term used to define a cluster of
 nodes in Gluster. Choose a server to be your “primary” server. This is
-just to keep things simple, you will generally want to run all commands
-from this tutorial. Keep in mind, running many Gluster specific commands
+just to keep things simple, and you will generally want to run all commands
+from this tutorial on that “primary” server. Keep in mind, running many Gluster specific commands
 (like `gluster volume create`) on one server in the cluster will
 execute the same command on all other servers.
 
 Replace `nodename` with hostname of the other server in the cluster,
 or IP address if you don’t have DNS or `/etc/hosts` entries.
-Let say we want to connect to `node02`:
+Lets say we want to connect to `node02`:
 
 		gluster peer probe node02
 
@@ -25,7 +25,7 @@ that the first node has already been added.
 
 ### Partition the disk
 
-Assuming you have a empty disk at `/dev/sdb`:
+Assuming you have an empty disk at `/dev/sdb`:
 
 		fdisk /dev/sdb 
 
@@ -76,6 +76,7 @@ to specify the bricks in a such a way that you would make both copies of the dat
 single node. This would make for an embarrassing explanation to your
 boss when your bulletproof, completely redundant, always on super
 cluster comes to a grinding halt when a single point of failure occurs.
+As such, please be diligent if your setup commands.
 
 Now, we can check to make sure things are working as expected:
 
@@ -96,7 +97,7 @@ And you should see results similar to the following:
 This shows us essentially what we just specified during the volume
 creation. The one this to mention is the `Status`. A status of `Created`
 means that the volume has been created, but hasn’t yet been started,
-which would cause any attempt to mount the volume fail.
+which would cause any attempt to mount the volume to fail.
 
 Now, we should start the volume.
 
